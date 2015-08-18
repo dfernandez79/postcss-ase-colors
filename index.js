@@ -6,7 +6,7 @@ var fs = require('fs');
 module.exports = postcss.plugin('postcss-ase-colors', function (opts) {
   var colors = {};
 
-  if (opts) {
+  if (opts && opts.file) {
     colors = ase.formatAsColorsObject(ase.read(fs.readFileSync(opts.file)));
   }
 

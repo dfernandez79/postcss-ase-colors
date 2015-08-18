@@ -28,4 +28,10 @@ describe('postcss-ase-colors', function () {
     }, 'postcss-ase-colors must be configured with the ASE file to use');
   });
 
+  it('should allow to add the plugin without opts', function () {
+    assert.doesNotThrow(function () {
+      postcss([ plugin({}) ]);
+    });
+  });
+
 });

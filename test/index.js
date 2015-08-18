@@ -22,4 +22,10 @@ describe('postcss-ase-colors', function () {
     test('a { color: unknown-name }', 'a { color: unknown-name }');
   });
 
+  it('throws an error if the file option is not defined', function () {
+    assert.throws(function () {
+      var output = postcss([ plugin() ]).process('.selector { }').css;
+    }, 'postcss-ase-colors must be configured with the ASE file to use');
+  });
+
 });

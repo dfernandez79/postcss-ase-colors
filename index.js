@@ -4,12 +4,14 @@ var ase  = require('ase-util');
 var fs = require('fs');
 
 module.exports = postcss.plugin('postcss-ase-colors', function (opts) {
-  return function (css) {
-    var colors = {};
+  var colors = {};
 
-    if (opts.file) {
-      colors = ase.formatAsColorsObject(ase.read(fs.readFileSync(opts.file)));
-    } else {
+  if (opts) {
+    colors = ase.formatAsColorsObject(ase.read(fs.readFileSync(opts.file)));
+  }
+
+  return function (css) {
+    if (!opts || !opts.file) {
       throw new Error('postcss-ase-colors must be configured with the ASE file to use');
     }
 

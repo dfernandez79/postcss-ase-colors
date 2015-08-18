@@ -1,6 +1,6 @@
 {
   "name": "postcss-ase-colors",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "PostCSS plugin that replaces color values from an Adobe Swatch Exchange file.",
   "main": "index.js",
   "keywords": [

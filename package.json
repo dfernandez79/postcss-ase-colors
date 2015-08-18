@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "PostCSS plugin that replaces color values from an Adobe Swatch Exchange file.",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
   "keywords": [
     "postcss",
     "css",

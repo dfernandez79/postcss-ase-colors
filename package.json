@@ -3,6 +3,10 @@
   "version": "0.3.0",
   "description": "PostCSS plugin that replaces color values from an Adobe Swatch Exchange file.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dfernandez79/postcss-ase-colors.git"
+  },
   "keywords": [
     "postcss",
     "css",
@@ -17,8 +21,8 @@
     "mocha": "^2.2.5"
   },
   "dependencies": {
-    "ase-util": "0.0.4",
-    "postcss": "^4.1.16",
+    "ase-util": "0.0.5",
+    "postcss": "^5.0.4",
     "postcss-value-parser": "^1.1.0"
   },
   "scripts": {

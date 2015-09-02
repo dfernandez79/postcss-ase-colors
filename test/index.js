@@ -1,8 +1,10 @@
+'use strict';
+
 var postcss = require('postcss');
 var assert = require('assert');
 var plugin = require('../');
 var path = require('path');
-var processor = postcss([ plugin({file: path.resolve(__dirname, 'fixture.ase')}) ]) ;
+var processor = postcss([ plugin({file: path.resolve(__dirname, 'fixture.ase')}) ]);
 
 function test(input, output) {
   assert.equal(processor.process(input).css, output);
@@ -23,9 +25,11 @@ describe('postcss-ase-colors', function () {
   });
 
   it('throws an error if the file option is not defined', function () {
+    var output;
     assert.throws(function () {
-      var output = postcss([ plugin() ]).process('.selector { }').css;
+      output = postcss([ plugin() ]).process('.selector { }').css;
     }, 'postcss-ase-colors must be configured with the ASE file to use');
+    assert(!output);
   });
 
   it('should allow to add the plugin without opts', function () {

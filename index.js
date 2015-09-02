@@ -1,6 +1,8 @@
+'use strict';
+
 var postcss = require('postcss');
 var parser = require('postcss-value-parser');
-var ase  = require('ase-util');
+var ase = require('ase-util');
 var fs = require('fs');
 
 module.exports = postcss.plugin('postcss-ase-colors', function (opts) {
@@ -15,7 +17,7 @@ module.exports = postcss.plugin('postcss-ase-colors', function (opts) {
       throw new Error('postcss-ase-colors must be configured with the ASE file to use');
     }
 
-    css.eachDecl(function (decl) {
+    css.walkDecls(function (decl) {
       var colorNameFound = false;
       var parsedValue = parser(decl.value);
 

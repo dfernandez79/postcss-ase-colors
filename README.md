@@ -5,8 +5,13 @@ postcss-ase-colors
 [ci-img]:  https://travis-ci.org/dfernandez79/postcss-ase-colors.svg
 [ci]:      https://travis-ci.org/dfernandez79/postcss-ase-colors
 
-[PostCSS](https://github.com/postcss/postcss) plugin that replaces color values from an Adobe Swatch Exchange file (color palette files used by
-  Illustrator and Photoshop).
+[PostCSS] plugin that replaces color values from an [Adobe Swatch Exchange] file. 
+
+ASE files are color palettes used by mainly by Adobe products: Photoshop, Illustrator, InDesign, and Kuler. The file is read using the [ase-util] package.
+  
+[Adobe Swatch Exchange]: https://helpx.adobe.com/illustrator/using/using-creating-swatches.html
+[PostCSS]: https://github.com/postcss/postcss
+[ase-util]: https://github.com/dfernandez79/ase-util
 
 For example if you have an ASE file that defines a color named **brand**, processing a CSS with
 `.selector { color: brand; }` it will replace `brand` with the hex color value in your ASE file.
